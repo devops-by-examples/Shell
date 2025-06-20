@@ -16,6 +16,7 @@ if [ ${#@} -lt 2 ]; then
     echo "usage: $0 [your github token] [REST expression]"
     exit 1;
 fi
+echo "provide github token"
 
 GITHUB_TOKEN=$1
 GITHUB_API_REST=$2
