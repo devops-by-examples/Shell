@@ -4,6 +4,8 @@
 # Version: v1
 #
 #
+#Author:Adi
+#hello
 #
 # This script will help users to communicate and retrieve information from GitHub
 # Usage:
