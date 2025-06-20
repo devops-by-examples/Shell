@@ -9,7 +9,7 @@
 # Usage:
 #   Please provide your github token and rest api to the script as input
 # I am learning git fork and git clone with examples
-#
+# This is to practice the git fetch and git pull commands
 ################################
 
 if [ ${#@} -lt 2 ]; then
