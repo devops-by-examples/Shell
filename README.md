@@ -8,3 +8,5 @@ git fetch : Just downloads the code changes and does not merge them to the curre
 git pull : Just downloads the code changes with merging the code to the current working branch 
   --- do this activity when you are ready to integrate the latest changes (addintionally, this is done only after the proper validation and review so no issue to pull the latest to the working branch) companies do follow this approach.
   --- what git pull does in simple --- it does execute two actions in a single command (git fetch + git merge (or) rebase)
+
+for the simple understading.
