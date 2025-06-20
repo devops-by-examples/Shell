@@ -25,6 +25,7 @@ GITHUB_API_HEADER_ACCEPT="Accept: application/vnd.github.v3+json"
 temp=`basename $0`
 TMPFILE=`mktemp /tmp/${temp}.XXXXXX` || exit 1
 
+# sample update for PR.
 
 function rest_call {
     curl -s $1 -H "${GITHUB_API_HEADER_ACCEPT}" -H "Authorization: token $GITHUB_TOKEN" >> $TMPFILE
