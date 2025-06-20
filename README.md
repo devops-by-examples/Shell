@@ -1,2 +1,2 @@
 # Shell
-Schell Scripts for testing
+Schell Scripts for practice and testing
