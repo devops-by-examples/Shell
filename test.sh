@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "Test commit"
+echo "Test commits"
