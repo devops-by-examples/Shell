@@ -3,13 +3,14 @@
 # Author: Abhishek
 # Version: v1
 #
-#
+# #
 #
 # This script will help users to communicate and retrieve information from GitHub
 # Usage:
 #   Please provide your github token and rest api to the script as input
 #
-#
+# hi my name is mirza nikhath
+# Hi my name is mirza nikhath#
 ################################
 
 if [ ${#@} -lt 2 ]; then
