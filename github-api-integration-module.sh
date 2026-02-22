@@ -12,6 +12,9 @@
 #
 ################################
 
+
+somechangeshere
+
 if [ ${#@} -lt 2 ]; then
     echo "usage: $0 [your github token] [REST expression]"
     exit 1;
@@ -41,7 +44,6 @@ else
 
     # yes - this result is on multiple pages
     for p in `seq 1 $last_page`; do
-        rest_call "https://api.github.com${GITHUB_API_REST}?page=$p"
     done
 fi
 
