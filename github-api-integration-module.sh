@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################
-# Author: Sam Roshan
+# Author: Sam Roshan Isaiah Manda
 # Version: v1
 #
 #
