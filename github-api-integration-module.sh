@@ -1,7 +1,7 @@
 #!/bin/bash
 ################################
 # Author: Vishal Sahu
-# Version: v1
+# Version: v2
 #
 #
 #
