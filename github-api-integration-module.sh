@@ -1,7 +1,7 @@
 #!/bin/bash
 ################################
-# Author: Abhishek
-# Version: v1
+# Author: Vishal Sahu
+# Version: v2
 #
 #
 #
@@ -16,6 +16,8 @@ if [ ${#@} -lt 2 ]; then
     echo "usage: $0 [your github token] [REST expression]"
     exit 1;
 fi
+
+echo "Hi this is Vishal Contrubution For this Script."
 
 GITHUB_TOKEN=$1
 GITHUB_API_REST=$2
