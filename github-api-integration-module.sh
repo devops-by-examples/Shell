@@ -9,7 +9,7 @@
 # Usage:
 #   Please provide your github token and rest api to the script as input
 #
-#
+# updated on: 3 Mar 2025
 ################################
 
 if [ ${#@} -lt 2 ]; then
