@@ -32,7 +32,7 @@ function rest_call {
 
 # single page result-s (no pagination), have no Link: section, the grep result is empty
 last_page=`curl -s -I "https://api.github.com${GITHUB_API_REST}" -H "${GITHUB_API_HEADER_ACCEPT}" -H "Authorization: token $GITHUB_TOKEN" | grep '^Link:' | sed -e 's/^Link:.*page=//g' -e 's/>.*$//g'`
-
+# Added line into file
 # does this result use pagination?
 if [ -z "$last_page" ]; then
     # no - this result has only one page
