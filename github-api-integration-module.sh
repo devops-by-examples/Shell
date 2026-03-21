@@ -25,7 +25,7 @@ GITHUB_API_HEADER_ACCEPT="Accept: application/vnd.github.v3+json"
 temp=`basename $0`
 TMPFILE=`mktemp /tmp/${temp}.XXXXXX` || exit 1
 
-
+# function to make rest call and save the result in a temp file
 function rest_call {
     curl -s $1 -H "${GITHUB_API_HEADER_ACCEPT}" -H "Authorization: token $GITHUB_TOKEN" >> $TMPFILE
 }
@@ -44,5 +44,5 @@ else
         rest_call "https://api.github.com${GITHUB_API_REST}?page=$p"
     done
 fi
-
+# display the contents of the temporary file
 cat $TMPFILE
