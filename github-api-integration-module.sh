@@ -4,6 +4,7 @@
 # Version: v1
 #
 #
+# Added new line to the shell script
 #
 # This script will help users to communicate and retrieve information from GitHub
 # Usage:
