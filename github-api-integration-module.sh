@@ -4,6 +4,8 @@
 # Version: v1
 #
 #
+# Added new line to the shell script
+# added comment to check git fetch and git pull
 #
 # This script will help users to communicate and retrieve information from GitHub
 # Usage:
