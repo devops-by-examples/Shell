@@ -1,48 +1,62 @@
 #!/bin/bash
 ################################
-# Author: Abhishek
-# Version: v1
+# Author: Abhishek (Improved)
+# Version: v2
 #
-#
-#
-# This script will help users to communicate and retrieve information from GitHub
+# This script communicates with the GitHub REST API
 # Usage:
-#   Please provide your github token and rest api to the script as input
-#
-#
+#   ./script.sh <GitHub Token> <REST endpoint>
+# Example:
+#   ./script.sh ghp_XXXXXX /repos/owner/repo/issues
 ################################
 
-if [ ${#@} -lt 2 ]; then
-    echo "usage: $0 [your github token] [REST expression]"
-    exit 1;
+# ---------------- Input Validation ----------------
+if [ $# -lt 2 ]; then
+    echo "Usage: $0 [your GitHub token] [REST endpoint]"
+    exit 1
 fi
 
 GITHUB_TOKEN=$1
 GITHUB_API_REST=$2
-
 GITHUB_API_HEADER_ACCEPT="Accept: application/vnd.github.v3+json"
 
-temp=`basename $0`
-TMPFILE=`mktemp /tmp/${temp}.XXXXXX` || exit 1
+# ---------------- Temporary File Setup ----------------
+TMPFILE=$(mktemp /tmp/$(basename $0).XXXXXX) || exit 1
+trap "rm -f $TMPFILE" EXIT  # Clean up temp file on exit
 
-
-function rest_call {
-    curl -s $1 -H "${GITHUB_API_HEADER_ACCEPT}" -H "Authorization: token $GITHUB_TOKEN" >> $TMPFILE
+# ---------------- Function to Call REST API ----------------
+rest_call() {
+    curl -sf "$1" \
+        -H "$GITHUB_API_HEADER_ACCEPT" \
+        -H "Authorization: token $GITHUB_TOKEN" >> "$TMPFILE" || {
+            echo "Error: API call failed -> $1"
+            exit 1
+        }
 }
 
-# single page result-s (no pagination), have no Link: section, the grep result is empty
-last_page=`curl -s -I "https://api.github.com${GITHUB_API_REST}" -H "${GITHUB_API_HEADER_ACCEPT}" -H "Authorization: token $GITHUB_TOKEN" | grep '^Link:' | sed -e 's/^Link:.*page=//g' -e 's/>.*$//g'`
+# ---------------- Pagination Handling ----------------
+# Check if there is a Link header indicating multiple pages
+last_page=$(curl -sI "https://api.github.com${GITHUB_API_REST}" \
+    -H "$GITHUB_API_HEADER_ACCEPT" \
+    -H "Authorization: token $GITHUB_TOKEN" \
+    | grep -i '^Link:' \
+    | grep -o 'page=[0-9]*>; rel="last"' \
+    | grep -o '[0-9]*')
 
-# does this result use pagination?
 if [ -z "$last_page" ]; then
-    # no - this result has only one page
+    # Single page result
     rest_call "https://api.github.com${GITHUB_API_REST}"
 else
-
-    # yes - this result is on multiple pages
-    for p in `seq 1 $last_page`; do
+    # Multiple pages
+    for p in $(seq 1 $last_page); do
         rest_call "https://api.github.com${GITHUB_API_REST}?page=$p"
     done
 fi
 
-cat $TMPFILE
+# ---------------- Output ----------------
+# Pretty print JSON if jq is installed
+if command -v jq >/dev/null 2>&1; then
+    cat "$TMPFILE" | jq .
+else
+    cat "$TMPFILE"
+fi
