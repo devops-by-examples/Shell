@@ -10,6 +10,8 @@
 #   Please provide your github token and rest api to the script as input
 #
 #
+# Modified by Vamshi
+# Change: this change is to perform clone-vs-fork activity
 ################################
 
 if [ ${#@} -lt 2 ]; then
