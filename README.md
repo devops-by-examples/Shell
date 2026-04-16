@@ -1,2 +1,2 @@
 # Shell
-Schell Scripts is updated
+Schell Scripts is updated newly
