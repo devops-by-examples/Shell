@@ -2,7 +2,7 @@
 ################################
 # Author: Abhishek
 # Version: v1
-#
+# to create a pull request checking
 #
 #
 # This script will help users to communicate and retrieve information from GitHub
