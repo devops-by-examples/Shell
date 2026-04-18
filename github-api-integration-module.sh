@@ -1,15 +1,10 @@
-#!/bin/bash
+
 ################################
 # Author: Abhishek
 # Version: v1
-#
-#
-#
-# This script will help users to communicate and retrieve information from GitHub
-# Usage:
-#   Please provide your github token and rest api to the script as input
-#
-#
+# Description: Script to communicate with GitHub API
+# Dependencies: curl, GitHub token
+# Usage: ./script.sh [token] [API endpoint]
 ################################
 
 if [ ${#@} -lt 2 ]; then
@@ -22,8 +17,29 @@ GITHUB_API_REST=$2
 
 GITHUB_API_HEADER_ACCEPT="Accept: application/vnd.github.v3+json"
 
-temp=`basename $0`
-TMPFILE=`mktemp /tmp/${temp}.XXXXXX` || exit 1
+TMPFILE=`mktemp /tmp/github.XXXXXX` || exit 1 
+trap "rm -f $TMPFILE" EXIT
+
+
+
+# Check GitHub API rate limit befre starting
+echo "Checking API rate limit..." >&2
+RATE_REMAINING=$(curl -s -H "${GITHUB_API_HEADER_ACCEPT}" -H "Authorization: token $GITHUB_TOKEN" \
+    "https://api.github.com/rate_limit" | grep -o '"remaining":[0-9]*' | head -1 | cut -d':' -f2)
+
+if [ "$RATE_REMAINING" -lt 10 ]; then
+    echo "WARNING: Only $RATE_REMAINING API calls remaining" >&2
+    echo "Continue? (y/n): " >&2
+    read -n 1 -r ANSWER
+    echo
+    if [[ ! $ANSWER =~ [Yy] ]]; then
+        echo "Exiting..." >&2
+        exit 1
+    fi
+else
+    echo "Rate limit OK: $RATE_REMAINING calls remaining" >&2
+fi
+
 
 
 function rest_call {
