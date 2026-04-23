@@ -1,2 +1,2 @@
 # Shell
-fetch
+pull
