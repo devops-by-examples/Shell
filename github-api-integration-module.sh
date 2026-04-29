@@ -24,10 +24,17 @@ GITHUB_API_HEADER_ACCEPT="Accept: application/vnd.github.v3+json"
 
 temp=`basename $0`
 TMPFILE=`mktemp /tmp/${temp}.XXXXXX` || exit 1
-
+DEBUG=true
 
 function rest_call {
+    log "Calling API: $1"
     curl -s $1 -H "${GITHUB_API_HEADER_ACCEPT}" -H "Authorization: token $GITHUB_TOKEN" >> $TMPFILE
+}
+
+function log { 
+    if [ "$DEBUG" = true ]; then
+       echo "[DEBUG] $1" 
+    fi 
 }
 
 # single page result-s (no pagination), have no Link: section, the grep result is empty
