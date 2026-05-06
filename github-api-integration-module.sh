@@ -2,7 +2,7 @@ i#!/bin/bash
 ################################
 # Author: Abhishek
 # Version: v1
-#### -By Amit Sapkal
+#### -Thanks Abhishek for sharing your code with us-
 #
 #
 # This script will help users to communicate and retrieve information from GitHub
