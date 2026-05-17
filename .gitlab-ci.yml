@@ -1,0 +1,58 @@
+workflow:
+  name: "Test CI/CD pipeline"
+
+stages:
+  - build
+  - test
+  - docker
+  - deploy
+
+build_job:
+  stage: build
+  script:
+    - echo "Building the application..."
+      # Add your build commands here 
+  tags:
+    - docker
+
+test_job:
+  stage: test
+  script:
+    - echo "Running tests..."
+      # Add your test commands here 
+  tags:
+    - docker
+
+docker_build_job:
+  stage: docker
+  script:
+    - echo "Building Docker image..."
+      # Add your Docker build commands here 
+  tags:
+    - docker
+docker_test_job:
+  stage: docker
+  needs: [docker_build_job]
+  script:
+    - echo "Testing Docker image..."
+      # Add your Docker test commands here
+  tags:
+    - docker 
+docker_push_job:
+  stage: docker
+  needs: [docker_test_job]
+  script:
+    - echo "Pushing Docker image to registry..."
+      # Add your Docker push commands here 
+  tags:
+    - docker
+
+deploy_job:
+  stage: deploy
+  script:
+    - echo "Deploying the application..."
+      # Add your deployment commands here 
+  tags:
+    - docker
+
+  
