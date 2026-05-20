@@ -10,6 +10,7 @@
 #   Please provide your github token and rest api to the script as input
 #
 #
+#
 ################################
 
 if [ ${#@} -lt 2 ]; then
@@ -46,3 +47,5 @@ else
 fi
 
 cat $TMPFILE
+
+#END OF THE FILE
