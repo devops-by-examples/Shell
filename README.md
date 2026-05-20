@@ -1,2 +1,2 @@
 # Shell
-Schell Scripts
+Schell Scripts for all students in this class
