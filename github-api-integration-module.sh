@@ -1,11 +1,11 @@
 #!/bin/bash
 ################################
-# Author: Abhishek
-# Version: v1
+# Author: Ricky
+# Version: v2
 #
 #
 #
-# This script will help users to communicate and retrieve information from GitHub
+# This is my script  
 # Usage:
 #   Please provide your github token and rest api to the script as input
 #
@@ -13,7 +13,7 @@
 ################################
 
 if [ ${#@} -lt 2 ]; then
-    echo "usage: $0 [your github token] [REST expression]"
+    echo "usage: $0 [my github token] [REST expression]"
     exit 1;
 fi
 
