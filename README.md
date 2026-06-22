@@ -3,6 +3,6 @@ Schell Scripts
 
 #!/bin/bash
 
-Name="Abhishek"
-echo " hellow $name "
+name="Abhishek"
+echo " hello $name "
 exit0
