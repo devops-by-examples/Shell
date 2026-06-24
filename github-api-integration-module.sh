@@ -8,7 +8,7 @@
 # This script will help users to communicate and retrieve information from GitHub
 # Usage:
 #   Please provide your github token and rest api to the script as input
-#
+#hello
 #
 ################################
 
@@ -17,7 +17,7 @@ if [ ${#@} -lt 2 ]; then
     exit 1;
 fi
 
-GITHUB_TOKEN=$1
+GITHUB_TOKEN=$7
 GITHUB_API_REST=$2
 
 GITHUB_API_HEADER_ACCEPT="Accept: application/vnd.github.v3+json"
