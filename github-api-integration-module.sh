@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################
-# Author: Tanzeel
+# Author: Tanzeel Alam
 # Version: v1
 #
 #
