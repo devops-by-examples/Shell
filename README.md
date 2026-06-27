@@ -1,2 +1,2 @@
 # Shell
-Schell Scripts tutorial
+Schell Scripts
