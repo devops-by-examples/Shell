@@ -10,11 +10,14 @@
 #   Please provide your github token and rest api to the script as input
 #
 #
+#####
 ################################
+## making change to learn fetch and pull
+## making changes to understand rebase
 
 if [ ${#@} -lt 2 ]; then
     echo "usage: $0 [your github token] [REST expression]"
-    exit 1;
+    exit 11;
 fi
 
 GITHUB_TOKEN=$1
