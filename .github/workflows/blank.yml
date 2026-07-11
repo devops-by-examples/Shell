@@ -1,0 +1,11 @@
+name: Issue event
+on: issues
+
+jobs:
+  PrintIssue:
+     runs-on: ubuntu-22.04
+     steps:
+       - name: Echo
+         run: echo ${{ github.event.issue.number }}
+    
+        
