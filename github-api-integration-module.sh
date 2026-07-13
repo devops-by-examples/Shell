@@ -4,7 +4,7 @@
 # Version: v1
 #
 #
-# My changes
+# My change \s done from CLI by creating new branch to cloneed code
 #
 # This script will help users to communicate and retrieve information from GitHub
 # Usage:
