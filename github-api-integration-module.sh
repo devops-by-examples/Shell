@@ -4,6 +4,7 @@
 # Version: v1
 #
 #
+#Making required modifications as per the assignment
 #
 # This script will help users to communicate and retrieve information from GitHub
 # Usage:
