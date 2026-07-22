@@ -4,7 +4,7 @@
 # Version: v1
 #
 #
-#testing 2
+#testing 1
 #
 # This script will help users to communicate and retrieve information from GitHub
 # Usage:
