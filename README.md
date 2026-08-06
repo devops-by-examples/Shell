@@ -1,2 +1,2 @@
 # Shell
-Schell Scripts for session
+Schell Scripts for session and practice. 
