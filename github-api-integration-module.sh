@@ -1,6 +1,7 @@
 #!/bin/bash
 ################################
 # Author: rivu98
+# previous author:
 # Version: v1
 #
 #
