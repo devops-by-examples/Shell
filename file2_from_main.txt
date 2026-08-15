@@ -1,0 +1,1 @@
+this is file2_from_main.txt
