@@ -1,3 +1,3 @@
 # Shell
 Schell Scripts
-Thanks for the Teachings 
+Thanks for the Teachings ....
