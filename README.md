@@ -1,2 +1,2 @@
 # Shell
-Shell Scripts and examples.com
+Shell Scripts and examples
