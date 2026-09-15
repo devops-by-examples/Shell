@@ -1,2 +1,3 @@
 # Shell
-Schell Scripts
+Schell Scripts for learning and practice
+reference
