@@ -3,7 +3,7 @@
 # Author: Abhishek
 # Version: v1
 #
-#
+#This is a new line 
 #
 # This script will help users to communicate and retrieve information from GitHub
 # Usage:
