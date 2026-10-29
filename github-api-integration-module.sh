@@ -2,7 +2,7 @@
 ################################
 # Author: Sai Vaibhav Kuppam
 # Version: v1
-# Updated script
+# Updated script for forked example
 #
 #
 # This script will help users to communicate and retrieve information from GitHub
