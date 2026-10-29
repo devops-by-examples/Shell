@@ -13,7 +13,7 @@
 ################################
 
 if [ ${#@} -lt 2 ]; then
-    echo "usage: $0 [your github token] [REST expression]"
+    echo "usage: $0 [xyz] [abc]"
     exit 1;
 fi
 
