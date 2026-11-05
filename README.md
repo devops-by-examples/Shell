@@ -1,2 +1,2 @@
 # Shell
-Schell Scripts learning
+Schell Scripts learning and explore
