@@ -47,4 +47,4 @@ fi
 
 cat $TMPFILE
 
-#Nothing just a test
+#Nothing just a test of git Fork and clone
