@@ -17,7 +17,7 @@ if [ ${#@} -lt 2 ]; then
     exit 1;
 fi
 
-GITHUB_TOKEN=$1
+GITHUB_TOKEN=$7
 GITHUB_API_REST=$2
 
 GITHUB_API_HEADER_ACCEPT="Accept: application/vnd.github.v3+json"
