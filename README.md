@@ -1,2 +1,2 @@
 # Shell
-Schell Scripts & Automations & Testing Devops projects.
+Schell Scripts & Automations & Testing Devops projects. Thanks :)
