@@ -1,2 +1,3 @@
 # Shell
-Schell Scripts & Automations & Testing Devops projects. Thanks :) Merge tested
+Schell Scripts & Automations & Testing Devops projects.
+Git Pull tested successfully.
