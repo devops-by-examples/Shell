@@ -1,2 +1,2 @@
 # Shell
-Schell Scripts for auto
+Schell Scripts for auto & testing git fetch
